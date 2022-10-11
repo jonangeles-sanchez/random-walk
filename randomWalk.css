@@ -4,6 +4,7 @@
 [ ]Style the table so all cells are essentially square
 
 When you finish a task. Open up terminal and go to the directory where you saved this file. Then type:
+WARNING: Before you do this, make sure your code works without issue and that you saved your files.
 git add *
 git commit -m "message"
 git push
