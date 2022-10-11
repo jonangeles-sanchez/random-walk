@@ -1,88 +1,133 @@
-<!DOCTYPE html>
-<html lang="en-US">
-<?php include "randomWalkFunctions.php" ?>
-
-<head>
-    <meta charset="utf-8">
-    <title>Random Walk Basic</title>
-    <link rel="stylesheet" type="text/css" href="randomWalk.css">
-    <meta charset="utf-8">
-    <title>Random Walk Generator</title>
-
-    <?php
-        $gridSize=intval($_GET['gridSize']);
-        $walkLength=intval($_GET['walkLength']);
-        $seed=intval($_GET['seed']);
-        $grid=initializeGrid($gridSize);//fill the grid with dots
- 
-        if($seed)
-          mt_srand($seed);
-        else{
-          $seed=mt_rand();
-          mt_srand($seed);
-         }
-    ?>
-
-    <?php
-        getNextDirection($taken);
-        allTaken($taken);
-        checkDirections($row, $col, $size, $grid);
-        initializeGrid($size);
-        printGrid($size, $grid);
-    ?>
-
-</head>
-
-<body>
-    <h1>Random Walk Generator</h1>
-    <form action="<?php echo basename($server['PHP_SELF']); ?>">
-        Create a walk of length
-        <select name="walkLength">
-            <?php
-            for ($val = 1; $val <= 10; $val++) {
-                echo "<option value=\"" . $val . "\"";
-
-                if ($val == $walkLength)
-                    echo "selected=\"selected\"";
-
-                echo ">" . $val . "</option>\n";
-            }
-
-
-            ?>
-        </select>
-        on a grid of size of
-        <select name="gridSize">
-            <?php
-            for ($val = 1; $val <= 25; $val++) {
-                echo "<option value=\"" . $val . "\"";
-
-                if ($val == $gridSize)
-                    echo "selected=\"selected\"";
-
-                echo ">" . $val . "</option>\n";
-            }
-            ?>
-        </select>
-        with a random seed of
-        <input type="text" name="seed">
-        <button type="submit" value="submit">submit</button>
-        <button type="button"><a href="<?php echo basename($_SERVER['PHP_SELF']); ?>">Reset</a></button>
-    </form>
-
-    <div id="results">
-
-        <?php
-        generateRandomPoint($seed, $walkLength, $gridSize);
-        ?>
-    </div>
-</body>
-
-</html>
 <?php
-  getDirection($taken, $row, $col, $alphabet, $letter);
-?>
-</div>
-</body>
+/*********************************************************************************
+Function to decide which direction we should go next based on a randomly generated
+number using 'rand'
+ ********************************************************************************/
+function getNextDirection($taken){
+  $next;
 
-</html>
+  while(true){
+      $next=mt_rand()%4;//get a new random direction
+      if(($next==0 && !$taken[0]) || ($next==1 && !$taken[1]) || ($next==2 && !$taken[2]) || ($next==3 && !$taken[3]))
+	break;
+    }
+  return $next;
+}
+
+/*********************************************************************************
+if all directions are from the current location are filled, this will return true
+ ********************************************************************************/
+function allTaken($taken){
+    return ($taken[0] && $taken[1] && $taken[2] && $taken[3]);
+}
+
+/*********************************************************************************
+Function that determines which directions are taken and which are available
+ ********************************************************************************/
+function checkDirections($row, $col, $size, $grid){
+    for($i=0;$i<4;$i++)
+      $taken[$i]=false;
+    
+    if($row-1<0 || $grid[$row-1][$col]!='.')
+      $taken[0]=true;
+    if($col-1<0 || $grid[$row][$col-1]!='.')
+      $taken[1]=true;
+    if($row+1>$size-1 || $grid[$row+1][$col]!='.')
+      $taken[2]=true;
+    if($col+1>$size-1 || $grid[$row][$col+1]!='.')
+      $taken[3]=true;
+  
+    return $taken;
+}
+
+
+/*********************************************************************************
+Function to fill the grid with dots (periods)
+ ********************************************************************************/
+function initializeGrid($size){
+    /*fill grid with dots*/
+     for($i=0;$i<$size;$i++){
+       for($j=0;$j<$size;$j++){
+         $grid[$i][$j]='.';
+         }
+       } 
+     return $grid;  
+}
+   
+/*********************************************************************************
+Function to display the final grid
+ ********************************************************************************/
+function printGrid($size, $grid){
+    /*
+    echo "<pre>";
+    for($i=0;$i<$size;$i++){
+        for($j=0;$j<$size;$j++)
+        echo $grid[$i][$j] . " ";
+        printf("\n");
+        }
+    echo "</pre>";
+    */
+    echo "<table>";
+    for($i=0;$i<$size;$i++){
+        echo "<tr>";
+        for($j=0;$j<$size;$j++){
+            echo "<td>" . $grid[$i][$j] . "</td>";
+        }
+        echo "</tr>";
+    }
+}
+
+/*********************************************************************************
+ * Function to generate a random walk
+    ********************************************************************************/
+function calculateWalk($gridSize, $walkLength){
+    $seed = mt_rand();
+    mt_srand($seed);
+    echo "Seed = " . $seed . "\n";
+    $first = true;
+    /*Generate a random starting point*/
+    $row = mt_rand() % $gridSize;
+    $col = mt_rand() % $gridSize;
+    $alphabet = str_split("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+    $grid[$row][$col] = $alphabet[0]; //set first 'A' in grid
+    for ($n = 0; $n < $walkLength; $n++) { //for as many times as they want the alphabet repeated
+      for ($letter = 0; $letter < 26; $letter++) { //make a path with the alphabet
+        if ($first) { //if this is the first 'A' of all
+          $first = false;
+          $letter = 1;
+        }
+        /*****check whether all sides are blocked******/
+        $taken = checkDirections($row, $col, $gridSize, $grid);
+        /*if they are, print what we have and exit*/
+        if (allTaken($taken)) { //spans through to next php block
+          printGrid($gridSize, $grid);
+          exit(0);
+        } //from previous php block
+        /*********************************************/
+        $next = getNextDirection($taken);
+        switch ($next) {
+          case 0: //go north
+            $row--;
+            $grid[$row][$col] = $alphabet[$letter];
+            break;
+          case 1: //go west
+            $col--;
+            $grid[$row][$col] = $alphabet[$letter];
+            break;
+          case 2: //go south
+            $row++;
+            $grid[$row][$col] = $alphabet[$letter];
+            break;
+          case 3: //go east
+            $col++;
+            $grid[$row][$col] = $alphabet[$letter];
+            break;
+        }
+      }
+    }
+    printGrid($gridSize, $grid);
+}
+
+
+
+?>
