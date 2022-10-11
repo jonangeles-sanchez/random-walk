@@ -1,3 +1,8 @@
+<!-- Jonathan Angeles & Johnny Arraya -->
+<!-- 10/10/2017 -->
+<!-- This program will randomly walk a user through a maze. -->
+<!-- On my honor, I have neither given nor received any academic aid or information that would violate the Honor Code of Mars Hill University. -->
+
 <!DOCTYPE html>
 
 <html lang="en-US">
