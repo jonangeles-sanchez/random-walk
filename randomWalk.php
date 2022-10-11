@@ -92,6 +92,8 @@
       }
 
 
+      if($walkLength < 1)
+        $walkLength = 1;
       ?>
     </select>
 
@@ -108,6 +110,10 @@
 
         echo ">" . $val . "</option>\n";
       }
+      if($gridSize < 1)
+        $gridSize = 1;
+      else if($gridSize > 25)
+        $gridSize = 25;
       ?>
     </select>
 
