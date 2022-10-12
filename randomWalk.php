@@ -13,6 +13,8 @@
   include "randomWalkFunctions.php";
   ?>
 
+<link rel="stylesheet" type="text/css" href="randomWalk.css">
+
   <?php
   $gridSize = intval($_POST['gridSize']);
   $walkLength = intval($_POST['walkLength']);
@@ -31,49 +33,12 @@
 
   <title>Random Walk Generator</title>
 
-  <style>
-    button a {
-      text-decoration: none;
-      color: black;
-    }
-
-    button a:hover {
-      cursor: inherit;
-    }
-
-    pre {
-      font-family: monospace;
-    }
-
-    p {
-      font-size: 100%;
-    }
-
-    sub {
-      font-size: 50%;
-    }
-
-    #results {
-      /* border:2px blue solid;*/
-
-      margin-top: 30px;
-      padding: 20px;
-
-    }
-
-    <?php
-
-    if (!$gridSize) {
-      echo "#results{display:none;}";
-    }
-
-    ?>
-  </style>
 
 </head>
 
+
 <body>
-  <h1>Random Walk Generator</h1>
+  <h1>Random Walk Generators</h1>
 
   <form action="<?php echo basename($_SERVER['PHP_SELF']); ?>" method="POST">
 
