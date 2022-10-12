@@ -43,7 +43,10 @@ git push
 	table, th {
 	  border: 1px solid;
 	}
-
+	
+	td {
+		width: 20px;
+	}
 
 /*
     <?php
