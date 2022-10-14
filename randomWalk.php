@@ -94,12 +94,12 @@
   <div id="results">
 
   <?php
-  //calculateWalk($gridSize, $walkLength);
+  calculateWalk($gridSize, $walkLength);
   ?>
   
   
     <?php
-    
+/*    
 
     
     echo "Seed = " . $seed . "\n";
@@ -125,7 +125,7 @@
 
         if (allTaken($taken)) { //spans through to next php block
           printGrid($gridSize, $grid);
-          
+ */         
     ?>
 
           <!-- What are you going to do about this when you move it to a function????-->
@@ -135,7 +135,7 @@
 </html>
 
 <?php
-
+/*
           exit(0);
         } //from previous php block
         //I don't understand how this works...
@@ -168,12 +168,7 @@
 
 
     printGrid($gridSize, $grid);
-
+*/
 
 ?>
 
-
-</div>
-</body>
-
-</html>
