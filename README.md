@@ -23,14 +23,14 @@
         * HINT: the number generator can be seeded after it has been already been used to generate a series of random values
     * When this option is unchecked, all letters should be black
 * Grid dots are always light gray
+* Video outline of this assignment: https://www.youtube.com/watch?v=odviMFtawW0&ab_channel=StefenHoward
 <br>
 
 ### Approaches by Howard
 * Have array that stores information sbout the styling for each cell
 * Store the string specifying the td, style, and content in the grid rather than just the character alone
-* Recap: https://www.youtube.com/watch?v=odviMFtawW0&ab_channel=StefenHoward
 <br>
 
 # Working with GitHub
-### How we should work:
+### How we should work using GitHub:
 instructions go here
