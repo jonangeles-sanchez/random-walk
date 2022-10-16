@@ -1,0 +1,8 @@
+I was directing a lot of instructions to my partner, Johnny. I knew exactly what to do but Johnny did not have any
+experience in PHP. I wanted to guide Johnny and help get some experience. I helped him move all the functions into
+an external php function file. Then, I let Johnny work on the CSS of the php. I completely forgot to mention to Johnny
+that a styling file can be created using PHP. Instead, Johnny created a .css file and added all the styling in that
+file. Thus, not allowing us to change styling with PHP. If we had more time, I believe Johnny and I would invest
+some more time in PHP styling files. I helped revise the code and ensure functionability. We used github, which I set
+up,  to share files and our own text editors to modify code. One issue we faced was trying to create the
+calculateWalk() function.
