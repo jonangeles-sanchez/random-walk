@@ -1,4 +1,4 @@
-<!-- Jonathan Angeles & Johnny Arraya -->
+<!-- Jonathan Angeles & Johnny Arraya & Leonardo Bernerdes & Michael Hyde -->
 <!-- 10/12/2022 -->
 <!-- This program will randomly walk a user through a maze. -->
 <!-- On my honor, I have neither given nor received any academic aid or information that would violate the Honor Code of Mars Hill University. -->
