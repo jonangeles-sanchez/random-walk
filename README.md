@@ -1,4 +1,4 @@
-### The assignment
+## The assignment
 
 * Add a "No Limit" option to the "walk length" drop down list and have that preselected
     * When this option is chosen, you should calculate the maximum number of times the alphabet could be repeated on the size board that is selected and set the walk length to that value.
@@ -24,11 +24,11 @@
     * When this option is unchecked, all letters should be black
 * Grid dots are always light gray
 
-## Approaches by Howard
+### Approaches by Howard
 * Have array that stores information sbout the styling for each cell
 * Store the string specifying the td, style, and content in the grid rather than just the character alone
 * Recap: https://www.youtube.com/watch?v=odviMFtawW0&ab_channel=StefenHoward
 
 
-### Working with GitHub
+# Working with GitHub
 instructions go here
