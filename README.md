@@ -33,14 +33,15 @@
 
 # Working with GitHub
 ### How we should work using GitHub:
-I believe using GitHub will help and allow us to use it as a tool now and in the future.
+I believe using GitHub will help and allow us to use it as a tool now and in the future. <br>
 Therefore, I think we should learn how to use branches.
 First: I would learn about github branches using this [video](https://www.youtube.com/clip/Ugkxxgn68sIypKs7OcqaAXbsZbi_JItcGrhf) or [this one](https://youtu.be/JTE2Fn_sCZs?t=72), they both help explain branches and how to use them
 <br>
 Then,
    * 1.) Dowload this project **locally** on your computer through your local terminal or [GitHub Desktop software](https://desktop.github.com/)
-   * 2.) Go to the directory, via terminal or GitHub Desktop, where your downloaded project is found and create a new branch (replace nameOfBranch with the name of the feature you plan on adding)
+   * 2.) Go to the directory, via terminal or GitHub Desktop, where your downloaded project is found and create a new branch to work in:
       * git branch nameOfBranch
+      * (replace nameOfBranch with the name of the feature you plan on adding)
    * 3.) Switch to that working branch
       * git checkout nameOfBranch
    * 4.) Open your text editor or terminal to work on your feature and finish it
@@ -48,7 +49,7 @@ Then,
       * git add -A
       * git commit -m "type short message regarding the feature you are implementing"
       * git push
-   * 6.) Wait for a group member to review the code and officially implement your code
+   * 6.) Wait for a group member to review the code and officially implement your code via GitHub
    * 7.) Once your code is implemented, you should recieve a notification and then:
       * delete the branch on your local computer with: git branch -d nameOfBranch
       * then update your main branch with: 
