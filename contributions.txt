@@ -3,8 +3,8 @@ You're welcome to write whatever, idc.
 testing pr
 
 Johnny:
--light fre grid
--clear and submit button
+- Lightgrey grid
+- Clear and submit button
 
 
 
