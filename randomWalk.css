@@ -1,58 +1,43 @@
 /* TO DO: 
-[ ]Style the table so all cells are essentially square
-
-When you finish a task. Open up terminal and go to the directory where you saved this file. Then type:
-rder: 1px solid;
-}
 WARNING: Before you do this, make sure your code works without issue and that you saved your files.
 git add *
 git commit -m "message"
 git push
-*/
+ */
 
 
-    button a {
-      text-decoration: none;
-      color: black;
-    }
+button a {
+    text-decoration: none;
+    color: black;
+}
 
-    button a:hover {
-      cursor: inherit;
-    }
+button a:hover {
+    cursor: inherit;
+}
 
-    pre {
-      font-family: monospace;
-    }
+pre {
+    font-family: monospace;
+}
 
-    p {
-      font-size: 100%;
-    }
+p {
+    font-size: 100%;
+}
 
-    sub {
-      font-size: 50%;
-    }
+sub {
+    font-size: 50%;
+}
 
-    #results {
-      /* border:2px blue solid;*/
+#results {
+    margin-top: 30px;
+    padding: 20px;
 
-      margin-top: 30px;
-      padding: 20px;
+}
 
-    }
+table, th {
+    border: 1px solid;
+}
 
-	table, th {
-	  border: 1px solid;
-	}
-	
-	td {
-		width: 20px;
-	}
+td {
+    width: 20px;
+}
 
-/*
-    <?php
-
-    if (!$gridSize) {
-      echo "#results{display:none;}";
-    }
-	?>
-*/
