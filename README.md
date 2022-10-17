@@ -56,6 +56,8 @@ Then,
          * git checkout main  
          * git pull
       * repeat steps 2-7
-
+<br> 
+I also recommend running 'git pull' each time you get on your terminal to work to ensure you have the latest updates on the files.
+<br>
 
 If this method of working doesn't work or seems too much. Let me know and we'll find alternatives. -Jon
