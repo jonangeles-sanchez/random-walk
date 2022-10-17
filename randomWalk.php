@@ -1,4 +1,4 @@
-<!-- Jonathan Angeles & Johnny Arraya -->
+<!-- Jonathan Angeles & Johnny Arraya & Leonardo Bernerdes & Michael Hyde -->
 <!-- 10/12/2022 -->
 <!-- This program will randomly walk a user through a maze. -->
 <!-- On my honor, I have neither given nor received any academic aid or information that would violate the Honor Code of Mars Hill University. -->
@@ -98,77 +98,9 @@
   ?>
   
   
-    <?php
-/*    
-
-    
-    echo "Seed = " . $seed . "\n";
-
-    $first = true;
-
-    $row = mt_rand() % $gridSize;
-    $col = mt_rand() % $gridSize;
-
-    $alphabet = str_split("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
-
-    $grid[$row][$col] = $alphabet[0]; //set first 'A' in grid
-
-    for ($n = 0; $n < $walkLength; $n++) { //for as many times as they want the alphabet repeated
-
-      for ($letter = 0; $letter < 26; $letter++) { //make a path with the alphabet
-
-        if ($first) { //if this is the first 'A' of all
-          $first = false;
-          $letter = 1;
-        }
-        $taken = checkDirections($row, $col, $gridSize, $grid);
-
-        if (allTaken($taken)) { //spans through to next php block
-          printGrid($gridSize, $grid);
- */         
-    ?>
-
-          <!-- What are you going to do about this when you move it to a function????-->
   </div>
 </body>
 
 </html>
 
-<?php
-/*
-          exit(0);
-        } //from previous php block
-        //I don't understand how this works...
-
-        $next = getNextDirection($taken);
-
-        switch ($next) {
-          case 0: //go north
-            $row--;
-            $grid[$row][$col] = $alphabet[$letter];
-            break;
-
-          case 1: //go west
-            $col--;
-            $grid[$row][$col] = $alphabet[$letter];
-            break;
-
-          case 2: //go south
-            $row++;
-            $grid[$row][$col] = $alphabet[$letter];
-            break;
-
-          case 3: //go east
-            $col++;
-            $grid[$row][$col] = $alphabet[$letter];
-            break;
-        }
-      }
-    }
-
-
-    printGrid($gridSize, $grid);
-*/
-
-?>
 
