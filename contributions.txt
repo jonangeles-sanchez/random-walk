@@ -21,4 +21,5 @@ Leo:
 
 
 Jonathan:
-
+- "add in color"
+- "random seed text input sticky"
