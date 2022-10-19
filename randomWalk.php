@@ -84,10 +84,10 @@
 
     with a random seed of
 
+      <!-- Default value previous seed -->
+    <input type="text" name="seed" value="<?php echo $seed; ?>">
 
-    <input type="text" name="seed">
-
-    <button type="submit" value="Submit">Submit</button>
+    <button type="submit" value="Submit">Submit</button> 
     <button type="button"><a href="<?php echo basename($_SERVER['PHP_SELF']); ?>">Reset</a></button>
   </form>
 
