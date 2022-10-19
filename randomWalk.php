@@ -67,14 +67,16 @@
 
     <select name="gridSize">
       <?php
-      for ($val = 1; $val <= 25; $val++) {
+      for ($val = 1; $val <= 24; $val++) {
         echo "<option value=\"" . $val . "\"";
 
         if ($val == $gridSize)
           echo "selected=\"selected\"";
 
         echo ">" . $val . "</option>\n";
+	  	//echo '<option value="25" selected>25</option>';
       }
+	  	echo '<option value="25" selected>25</option>';
       if($gridSize < 1)
         $gridSize = 1;
       else if($gridSize > 25)

@@ -128,7 +128,4 @@ function calculateWalk($gridSize, $walkLength){
     }
     printGrid($gridSize, $grid);
 }
-
-
-
 ?>
