@@ -81,10 +81,10 @@ function printGrid($size, $grid){
  * Function to generate a random walk
 ********************************************************************************/
 function calculateWalk($gridSize, $walkLength){
-	global $grid;
-    $seed = mt_rand();
-    mt_srand($seed);
-    echo "Seed = " . $seed . "\n";
+	  global $grid;
+    global $seed;
+
+    //echo "Seed = " . $seed . "\n";
     $first = true;
     /*Generate a random starting point*/
     $row = mt_rand() % $gridSize;
