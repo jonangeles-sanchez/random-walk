@@ -22,7 +22,7 @@
         * This one is a bit tricky since there can be only one random number generator per php process
         * HINT: the number generator can be seeded after it has been already been used to generate a series of random values
     * When this option is unchecked, all letters should be black
-* Grid dots are always light gray
+* ~Grid dots are always light gray~
 * Video outline of this assignment: https://www.youtube.com/watch?v=odviMFtawW0&ab_channel=StefenHoward
 <br>
 
