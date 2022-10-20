@@ -13,7 +13,7 @@
   include "randomWalkFunctions.php";
   ?>
 
-<link rel="stylesheet" type="text/css" href="randomWalk.css">
+<link rel="stylesheet" type="text/css" href="rwStyle.php">
 
   <?php
   $gridSize = intval($_POST['gridSize']);
