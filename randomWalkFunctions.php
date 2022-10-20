@@ -71,7 +71,11 @@ function printGrid($size, $grid){
     for($i=0;$i<$size;$i++){
         echo "<tr>";
         for($j=0;$j<$size;$j++){
-            echo "<td>" . $grid[$i][$j] . "</td>";
+			if ($grid[$i][$j] == '.') {
+				echo "<td class=\"dot\">" .$grid[$i][$j] . "</td>";
+			} else {
+            	echo "<td>" . $grid[$i][$j] . "</td>";
+			}
         }
         echo "</tr>";
     }
