@@ -79,7 +79,11 @@
       if($gridSize == 0)
         echo "<option value=\"25\" selected=\"selected\">25</option>\n";
       
-
+      if($grid < 1){
+        $gridSize = 25;
+      } else if($grid > 25){
+        $gridSize = 25;
+      }
       /*
       if($gridSize < 1)
         $gridSize = 1;
