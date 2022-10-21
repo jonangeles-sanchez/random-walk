@@ -1,8 +1,6 @@
-/*  
-    This file is discontinued.  It is no longer used by the random walk, but will remain here for reference.
-    Or just incase we want to use it again.
- */
-
+<?php 
+    header("Content-type: text/css");
+?>
 
 button a {
     text-decoration: none;
@@ -28,7 +26,6 @@ sub {
 #results {
     margin-top: 30px;
     padding: 20px;
-
 }
 
 table, th {
@@ -39,3 +36,6 @@ td {
     width: 20px;
 }
 
+td.dot {
+	color: lightgray;
+}

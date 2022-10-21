@@ -71,7 +71,11 @@ function printGrid($size, $grid){
     for($i=0;$i<$size;$i++){
         echo "<tr>";
         for($j=0;$j<$size;$j++){
-            echo "<td>" . $grid[$i][$j] . "</td>";
+			if ($grid[$i][$j] == '.') {
+				echo "<td class=\"dot\">" .$grid[$i][$j] . "</td>";
+			} else {
+            	echo "<td>" . $grid[$i][$j] . "</td>";
+			}
         }
         echo "</tr>";
     }
@@ -81,10 +85,10 @@ function printGrid($size, $grid){
  * Function to generate a random walk
 ********************************************************************************/
 function calculateWalk($gridSize, $walkLength){
-	global $grid;
-    $seed = mt_rand();
-    mt_srand($seed);
-    echo "Seed = " . $seed . "\n";
+	  global $grid;
+    global $seed;
+
+    //echo "Seed = " . $seed . "\n";
     $first = true;
     /*Generate a random starting point*/
     $row = mt_rand() % $gridSize;
@@ -128,7 +132,4 @@ function calculateWalk($gridSize, $walkLength){
     }
     printGrid($gridSize, $grid);
 }
-
-
-
 ?>

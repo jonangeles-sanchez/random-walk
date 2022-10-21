@@ -4,13 +4,13 @@
     * When this option is chosen, you should calculate the maximum number of times the alphabet could be repeated on the size board that is selected and set the walk length to that value.
     *Make this field "sticky"
 
-* By default, have the "grid size" drop down preselected to 25
-    * Make this field "sticky"
+* ~By default, have the "grid size" drop down preselected to 25~
+    * ~Make this field "sticky"~
 
-* Make the "random seed" text input "sticky"
-    * That means it should display the most recently produced/selected seed so it can be used again if desired
-    * When the page is first loaded, make this field empty
-    * Remove the "seed=xxxxxxxx" that used to be displayed above the grid. It is now part of the text input field
+* ~Make the "random seed" text input "sticky"~
+    * ~That means it should display the most recently produced/selected seed so it can be used again if desired~
+    * ~When the page is first loaded, make this field empty~
+    * ~Remove the "seed=xxxxxxxx" that used to be displayed above the grid. It is now part of the text input field~
 
 * Since "Submit" will always use the displayed value of the seed field unless you change it, add a "Clear and Submit" button
     * This button will clear the "random seed" field using JavaScript before it submits the form so we get a new random seed
@@ -22,7 +22,7 @@
         * This one is a bit tricky since there can be only one random number generator per php process
         * HINT: the number generator can be seeded after it has been already been used to generate a series of random values
     * When this option is unchecked, all letters should be black
-* Grid dots are always light gray
+* ~Grid dots are always light gray~
 * Video outline of this assignment: https://www.youtube.com/watch?v=odviMFtawW0&ab_channel=StefenHoward
 <br>
 
@@ -56,6 +56,8 @@ Then,
          * git checkout main  
          * git pull
       * repeat steps 2-7
-
+<br> 
+I also recommend running 'git pull' each time you get on your terminal to work to ensure you have the latest updates on the files.
+<br>
 
 If this method of working doesn't work or seems too much. Let me know and we'll find alternatives. -Jon

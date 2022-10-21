@@ -13,7 +13,7 @@
   include "randomWalkFunctions.php";
   ?>
 
-<link rel="stylesheet" type="text/css" href="randomWalk.css">
+<link rel="stylesheet" type="text/css" href="rwStyle.php">
 
   <?php
   $gridSize = intval($_POST['gridSize']);
@@ -67,7 +67,7 @@
 
     <select name="gridSize">
       <?php
-      for ($val = 1; $val <= 25; $val++) {
+      for ($val = 1; $val <= 24; $val++) {
         echo "<option value=\"" . $val . "\"";
 
         if ($val == $gridSize)
@@ -75,26 +75,39 @@
 
         echo ">" . $val . "</option>\n";
       }
+       //Make 25 default
+      if($gridSize == 0)
+        echo "<option value=\"25\" selected=\"selected\">25</option>\n";
+      
+      if($grid < 1){
+        $gridSize = 25;
+      } else if($grid > 25){
+        $gridSize = 25;
+      }
+      /*
       if($gridSize < 1)
         $gridSize = 1;
       else if($gridSize > 25)
         $gridSize = 25;
+      */
+      
+      
       ?>
     </select>
 
     with a random seed of
 
+      <!-- Default value previous seed -->
+    <input type="text" name="seed" value="<?php echo $seed; ?>">
 
-    <input type="text" name="seed">
-
-    <button type="submit" value="Submit">Submit</button>
+    <button type="submit" value="Submit">Submit</button> 
     <button type="button"><a href="<?php echo basename($_SERVER['PHP_SELF']); ?>">Reset</a></button>
   </form>
 
   <div id="results">
 
   <?php
-  calculateWalk($gridSize, $walkLength);
+    calculateWalk($gridSize, $walkLength);
   ?>
   
   
