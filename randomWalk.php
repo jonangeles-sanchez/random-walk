@@ -74,13 +74,18 @@
           echo "selected=\"selected\"";
 
         echo ">" . $val . "</option>\n";
-	  	//echo '<option value="25" selected>25</option>';
       }
-	  	echo '<option value="25" selected>25</option>';
+       //Make 25 default
+      if($gridSize == 0)
+        echo "<option value=\"25\" selected=\"selected\">25</option>\n";
+
       if($gridSize < 1)
         $gridSize = 1;
       else if($gridSize > 25)
         $gridSize = 25;
+
+      
+      
       ?>
     </select>
 
@@ -96,7 +101,7 @@
   <div id="results">
 
   <?php
-  calculateWalk($gridSize, $walkLength);
+    calculateWalk($gridSize, $walkLength);
   ?>
   
   
