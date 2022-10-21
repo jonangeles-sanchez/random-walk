@@ -95,6 +95,8 @@ function calculateWalk($gridSize, $walkLength){
     $col = mt_rand() % $gridSize;
     $alphabet = str_split("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
     $grid[$row][$col] = $alphabet[0]; //set first 'A' in grid
+	$size = 0;
+	//if ($walkLength 
     for ($n = 0; $n < $walkLength; $n++) { //for as many times as they want the alphabet repeated
       for ($letter = 0; $letter < 26; $letter++) { //make a path with the alphabet
         if ($first) { //if this is the first 'A' of all
