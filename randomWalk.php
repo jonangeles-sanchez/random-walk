@@ -55,7 +55,8 @@
 
         echo ">" . $val . "</option>\n";
       }
-
+	  	if ($walkLength == 0) 
+		 echo "<option value=\"No Limit\" selected=\"selected\">No Limit</option>\n";
 
       if($walkLength < 1)
         $walkLength = 1;
