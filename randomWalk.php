@@ -67,7 +67,7 @@
 
     <select name="gridSize">
       <?php
-      for ($val = 1; $val <= 24; $val++) {
+      for ($val = 1; $val <= 25; $val++) {
         echo "<option value=\"" . $val . "\"";
 
         if ($val == $gridSize)
@@ -79,11 +79,13 @@
       if($gridSize == 0)
         echo "<option value=\"25\" selected=\"selected\">25</option>\n";
       
+	  /*
       if($grid < 1){
         $gridSize = 25;
       } else if($grid > 25){
         $gridSize = 25;
       }
+	  */
       /*
       if($gridSize < 1)
         $gridSize = 1;
@@ -107,7 +109,8 @@
   <div id="results">
 
   <?php
-    calculateWalk($gridSize, $walkLength);
+	if($gridSize != 0)
+    	calculateWalk($gridSize, $walkLength);
   ?>
   
   
