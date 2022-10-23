@@ -7,8 +7,6 @@ Johnny:
 - Clear and submit button (4th bullet on assignment)
 
 
-
-
 Michael:
 - add a no limit option to the walk length drop down list and have that preselected (first bullet point on the assignment)
 
