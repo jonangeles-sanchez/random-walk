@@ -40,7 +40,7 @@
 <body>
   <h1>Random Walk Generators</h1>
 
-  <form action="<?php echo basename($_SERVER['PHP_SELF']); ?>" method="POST">
+  <form id = "myForm" action="<?php echo basename($_SERVER['PHP_SELF']); ?>" method="POST">
 
     Create a walk of up to length
 
@@ -101,20 +101,30 @@
     with a random seed of
 
       <!-- Default value previous seed -->
-    <input type="text" name="seed" value="<?php echo $seed; ?>">
+    <input type="text" name="seed" id = "seedField" value="<?php echo $seed; ?>">
 
-    <button type="clear and submit" value="Clear and Submit"><a href="<?php echo basename($_SERVER['PHP_SELF']); ?>">Clear and Submit</a></button> 
+  <?php
+	echo "<button type=\"button\"  onclick = \"clearSubmitFunction()\">Clear and
+	Submit</button>";
+  ?>
     <button type="submit" value="Submit">Submit</button> 
     <button type="button"><a href="<?php echo basename($_SERVER['PHP_SELF']); ?>">Reset</a></button>
   </form>
 
   <div id="results">
 
+
   <?php
 	if($gridSize != 0)
     	calculateWalk($gridSize, $walkLength);
   ?>
-  
+ 
+ <script>
+	function clearSubmitFunction() {
+		document.getElementById("seedField").value = "";
+		document.getElementById("myForm").submit();
+	}
+ </script>
   
   </div>
 </body>
