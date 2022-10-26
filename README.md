@@ -12,8 +12,8 @@
     * ~When the page is first loaded, make this field empty~
     * ~Remove the "seed=xxxxxxxx" that used to be displayed above the grid. It is now part of the text input field~
 
-* Since "Submit" will always use the displayed value of the seed field unless you change it, add a "Clear and Submit" button
-    * This button will clear the "random seed" field using JavaScript before it submits the form so we get a new random seed
+* ~Since "Submit" will always use the displayed value of the seed field unless you change it, add a "Clear and Submit" button~
+    * ~This button will clear the "random seed" field using JavaScript before it submits the form so we get a new random seed~
 
 * Add an "In Color" checkbox that, when selected, will colorize the output
     * This option should choose random rgb values for each run of the alphabet
