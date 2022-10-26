@@ -103,6 +103,7 @@
       <!-- Default value previous seed -->
     <input type="text" name="seed" value="<?php echo $seed; ?>">
 
+    <button type="clear and submit" value="Clear and Submit"><a href="<?php echo basename($_SERVER['PHP_SELF']); ?>">Clear and Submit</a></button> 
     <button type="submit" value="Submit">Submit</button> 
     <button type="button"><a href="<?php echo basename($_SERVER['PHP_SELF']); ?>">Reset</a></button>
   </form>
