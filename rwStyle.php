@@ -39,3 +39,40 @@ td {
 td.dot {
 	color: lightgray;
 }
+
+.red{
+    color: red;
+}
+
+.blue{
+    color: blue;
+}
+
+.green{
+    color: green;
+}
+
+.yellow{
+    color: yellow;
+}
+
+.orange{
+    color: orange;
+}
+
+.purple{
+    color: purple;
+}
+
+.pink{
+    color: pink;
+}
+
+.brown{
+    color: brown;
+}
+
+.black{
+    color: black;
+}
+

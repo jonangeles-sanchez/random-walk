@@ -109,7 +109,7 @@
   ?>
     <button type="submit" value="Submit">Submit</button> 
     <button type="button"><a href="<?php echo basename($_SERVER['PHP_SELF']); ?>">Reset</a></button>
-    <input type="checkbox" id="color" name="color">
+    <input type="checkbox" id="color" name="color" <?php if(isset($_POST['color'])) echo "checked = 'checked'"; ?>>
     <label for="color">In Color</label>
   </form>
 
