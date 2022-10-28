@@ -79,7 +79,7 @@ Function to display the final grid
  ********************************************************************************/
 function printGrid($size, $grid, $maxLength)
 {
-
+  //added in-color functionality
   $colorCollection = array("red", "blue", "green", "yellow", "orange", "purple", "pink", "brown", "black");
   $lengthColors = array();
   for ($i = 0; $i <= $maxLength; $i++) {
