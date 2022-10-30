@@ -82,8 +82,10 @@ function printGrid($size, $grid, $maxLength)
   //added in-color functionality
   $colorCollection = array("red", "blue", "green", "yellow", "orange", "purple", "pink", "brown", "black");
   $lengthColors = array();
-  for ($i = 0; $i <= $maxLength; $i++) {
-    array_push($lengthColors, $colorCollection[mt_rand() % 9]);
+  if(isset($_POST['color'])) {
+    for ($i = 0; $i <= $maxLength; $i++) {
+      array_push($lengthColors, $colorCollection[mt_rand() % 9]);
+    }
   }
   //print_r($lengthColors);
   $color = false;
@@ -153,6 +155,7 @@ function printGrid($size, $grid, $maxLength)
   }
 }
 
+
 /*********************************************************************************
  * Function to generate a random walk
  ********************************************************************************/
@@ -160,6 +163,7 @@ function calculateWalk($gridSize, $walkLength)
 {
   global $grid;
   global $seed;
+  global $maxLength;
 
   //echo "Seed = " . $seed . "\n";
   $first = true;
