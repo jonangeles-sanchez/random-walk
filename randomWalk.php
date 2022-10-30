@@ -21,11 +21,15 @@
   $seed = intval($_POST['seed']);
   $grid = initializeGrid($gridSize); //fill the grid with dots
 
-  if ($seed)
-    mt_srand($seed);
-  else {
-    $seed = mt_rand();
-    mt_srand($seed);
+  if($_POST){
+    if ($seed)
+      mt_srand($seed);
+    else {
+      $seed = mt_rand();
+      mt_srand($seed);
+    }
+  } else {
+    $seed = "";
   }
   ?>
 
@@ -120,6 +124,7 @@
 
 
   <?php
+  if($gridSize > 0)
     calculateWalk($gridSize, $walkLength);
   ?>
  
