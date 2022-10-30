@@ -15,13 +15,13 @@
 * ~Since "Submit" will always use the displayed value of the seed field unless you change it, add a "Clear and Submit" button~
     * ~This button will clear the "random seed" field using JavaScript before it submits the form so we get a new random seed~
 
-* Add an "In Color" checkbox that, when selected, will colorize the output
-    * This option should choose random rgb values for each run of the alphabet
-    * This option should be selected by default, but also be "sticky"
+* ~Add an "In Color" checkbox that, when selected, will colorize the output~
+    * ~This option should choose random rgb values for each run of the alphabet~
+    * ~This option should be selected by default, but also be "sticky"~
     * Every time you hit "submit," the random pattern should stay the same, but the random colors should change
         * This one is a bit tricky since there can be only one random number generator per php process
         * HINT: the number generator can be seeded after it has been already been used to generate a series of random values
-    * When this option is unchecked, all letters should be black
+    * ~When this option is unchecked, all letters should be black~
 * ~Grid dots are always light gray~
 * Video outline of this assignment: https://www.youtube.com/watch?v=odviMFtawW0&ab_channel=StefenHoward
 <br>
