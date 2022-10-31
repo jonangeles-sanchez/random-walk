@@ -194,7 +194,12 @@ function calculateWalk($gridSize, $walkLength)
   $alphabet = str_split("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
   $grid[$row][$col] = $alphabet[0] . "0"; //set first 'A' in grid
   $size = 0;
-  for ($n = 0; $n < $walkLength; $n++) { //for as many times as they want the alphabet repeated
+  if($_POST['walkLength'] == "No Limit"){
+  	$size = round(($_POST['gridSize']**2)/26);
+  } else {
+	$size = $_POST['walkLength'];
+  }
+  for ($n = 0; $n < $size; $n++) { //for as many times as they want the alphabet repeated
     for ($letter = 0; $letter < 26; $letter++) { //make a path with the alphabet
       if ($first) { //if this is the first 'A' of all
         $first = false;

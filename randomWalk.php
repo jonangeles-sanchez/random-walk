@@ -56,19 +56,27 @@
     <select name="walkLength">
 
       <?php
+	  $isSelected = false;
       for ($val = 1; $val <= 10; $val++) {
         echo "<option value=\"" . $val . "\"";
 
-        if ($val == $walkLength)
+        if ($val == $walkLength){
           echo "selected=\"selected\"";
+		  $isSelected = true;
+		}
 
         echo ">" . $val . "</option>\n";
       }
-	  	if ($walkLength == 0) 
-		 echo "<option value=\"No Limit\" selected=\"selected\">No Limit</option>\n";
+	  	if ($isSelected){ 
+			echo "<option value=\"No Limit\">No Limit</option>\n";	
+		} else {
+			echo "<option value=\"No Limit\" selected=\"selected\">No Limit</option>\n";
+		}
 
+	/*
       if($walkLength < 1)
         $walkLength = 1;
+	*/
       ?>
     </select>
     <input type="hidden" name="previousWalkLength" value="<?php echo $walkLength; ?>">
