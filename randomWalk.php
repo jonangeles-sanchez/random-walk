@@ -12,7 +12,12 @@
   <?php
   include "randomWalkFunctions.php";
   ?>
-
+ <script>//defer - move to the top/head
+	function clearSubmitFunction() {
+		document.getElementById("seedField").value = "";
+		document.getElementById("myForm").submit();
+	}
+ </script>
 <link rel="stylesheet" type="text/css" href="rwStyle.php">
 
   <?php
@@ -21,7 +26,7 @@
   $seed = intval($_POST['seed']);
   $grid = initializeGrid($gridSize); //fill the grid with dots
 
-  if($_POST){
+  if($_SERVER['REQUEST_METHOD'] == 'POST'){
     if ($seed)
       mt_srand($seed);
     else {
@@ -66,6 +71,7 @@
         $walkLength = 1;
       ?>
     </select>
+    <input type="hidden" name="previousWalkLength" value="<?php echo $walkLength; ?>">
 
 
     on a grid of size
@@ -101,11 +107,13 @@
       
       ?>
     </select>
+    <input type="hidden" name="previousGridSize" value="<?php echo $gridSize; ?>">
 
     with a random seed of
 
       <!-- Default value previous seed -->
     <input type="text" name="seed" id = "seedField" value="<?php echo $seed; ?>">
+    <input type="hidden" name = previousSeed value = "<?php echo $seed; ?>">
 
   <?php
 	echo "<button type=\"button\"  onclick = \"clearSubmitFunction()\">Clear and
@@ -122,18 +130,20 @@
 
   <div id="results">
 
-
   <?php
-  if($gridSize > 0)
+  /*
+   * Change color of walk if values are the same as previous submission
+   */
+  if($gridSize > 0){
+    if(isset($_POST['color']) && $_POST['previousGridSize'] == $gridSize && $_POST['previousWalkLength'] == $walkLength && $_POST['previousSeed'] == $seed){
+      echo "colors must change \n";//Add function to change color
+    
+    }
     calculateWalk($gridSize, $walkLength);
+  }
   ?>
  
- <script>
-	function clearSubmitFunction() {
-		document.getElementById("seedField").value = "";
-		document.getElementById("myForm").submit();
-	}
- </script>
+
   
   </div>
 </body>

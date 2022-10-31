@@ -1,5 +1,6 @@
 <?php
 
+
 /*********************************************************************************
 Function to decide which direction we should go next based on a randomly generated
 number using 'rand'
@@ -75,17 +76,35 @@ function initializeGrid($size)
 }
 
 /*********************************************************************************
+ * Function to change the color of the walk if values are the same as previous submission
+ ********************************************************************************/
+function changeWalkColors($lengthColors){
+  for($i = 0; $i < count($lengthColors); $i++){
+    $lengthColors[$i] = "red";
+  }
+  return $lengthColors;
+}
+
+/*********************************************************************************
 Function to display the final grid
  ********************************************************************************/
 function printGrid($size, $grid, $maxLength)
 {
+  global $gridSize;
+  global $walkLength;
+  global $seed;
+
   //added in-color functionality
   $colorCollection = array("red", "blue", "green", "yellow", "orange", "purple", "pink", "brown", "black");
-  $lengthColors = array();
+  $lengthColors = array(); //this array will hold the color of each length
+  //but needs to be randomized when user submits same form
   if(isset($_POST['color'])) {
     for ($i = 0; $i <= $maxLength; $i++) {
       array_push($lengthColors, $colorCollection[mt_rand() % 9]);
     }
+  } else if(isset($_POST['color']) && $_POST['previousGridSize'] == $gridSize && $_POST['previousWalkLength'] == $walkLength && $_POST['previousSeed'] == $seed) {
+    echo "colors changing\n";
+    $lengthColors = changeWalkColors($lengthColors);
   }
   //print_r($lengthColors);
   $color = false;
@@ -153,6 +172,8 @@ function printGrid($size, $grid, $maxLength)
     }
     echo "</tr>";
   }
+
+  return $lengthColors;
 }
 
 
@@ -213,3 +234,5 @@ function calculateWalk($gridSize, $walkLength)
   $maxLength = $n;
   printGrid($gridSize, $grid, $maxLength);
 }
+
+?>
