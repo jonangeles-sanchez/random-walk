@@ -1,8 +1,8 @@
 ## The assignment
 
 * ~Add a "No Limit" option to the "walk length" drop down list and have that preselected~
-    * When this option is chosen, you should calculate the maximum number of times the alphabet could be repeated on the size board that is selected and set the walk length to that value.
-    *Make this field "sticky"
+    * ~When this option is chosen, you should calculate the maximum number of times the alphabet could be repeated on the size board that is selected and set the walk length to that value.
+    *Make this field "sticky"~
 
 * ~By default, have the "grid size" drop down preselected to 25~
     * ~Make this field "sticky"~
