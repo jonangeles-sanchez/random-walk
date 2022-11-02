@@ -12,12 +12,23 @@
   <?php
   include "randomWalkFunctions.php";
   ?>
+
+ 
  <script>//defer - move to the top/head
+
+ /************************************************************************
+ This function clears the value, generates a new value from myForm, and
+ submits the new value in javascript.
+ *************************************************************************/
 	function clearSubmitFunction() {
+		//This sets the value equal to nothing(clears the value)
 		document.getElementById("seedField").value = "";
+		//This line submits myForm that generates in the value 
 		document.getElementById("myForm").submit();
 	}
+
  </script>
+
 <link rel="stylesheet" type="text/css" href="rwStyle.php">
 
   <?php
@@ -123,7 +134,12 @@
     <input type="text" name="seed" id = "seedField" value="<?php echo $seed; ?>">
     <input type="hidden" name = previousSeed value = "<?php echo $seed; ?>">
 
+
   <?php
+/**********************************************************************
+  This generates the Clear and Submit Button and calls from 
+  the function clearSubmitFunction().
+***********************************************************************/
 	echo "<button type=\"button\"  onclick = \"clearSubmitFunction()\">Clear and
 	Submit</button>";
   ?>
