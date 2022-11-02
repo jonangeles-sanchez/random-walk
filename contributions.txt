@@ -12,7 +12,9 @@ Michael:
 
 
 Leo:
-- by default have the grid size drop down preselected to 25 (second bullet point on the assignment)
+- By default have the grid size drop down preselected to 25
+- Made all the dots in the grid lightgrey
+- Helped implement the no limit option to the walklength
 
 Jonathan:
 - "add in color" (5th bullet point)
