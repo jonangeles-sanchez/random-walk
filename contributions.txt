@@ -6,6 +6,15 @@ Johnny:
 - Lightgrey grid (last bullet point on assignment)
 - Clear and submit button (4th bullet on assignment)
 
+After Completion:
+I successfully completed the Clear and Submit button. I had a little help from
+Jonathan Sanches Angeles with javascript because he understands it more. We made a Function
+called clearSubmitFunction() and told the button to go to the clearSubmitFunction() whenever
+the (clear and submit) button is pressed. The function clears the value, adds
+a new one, and submit the new value. I attempted to work on making the grid
+lightgrey but Leonardo Bernardes finised it and submited it on github before I
+got to it.
+
 
 Michael:
 - add a no limit option to the walk length drop down list and have that preselected (first bullet point on the assignment)
