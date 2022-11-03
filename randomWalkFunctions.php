@@ -95,7 +95,7 @@ function printGrid($size, $grid, $maxLength)
   global $seed;
 
   //added in-color functionality
-  $colorCollection = array("red", "blue", "green", "yellow", "orange", "purple", "pink", "brown", "black");
+  $colorCollection = array("red", "blue", "green", "yellow", "orange", "purple", "pink", "brown", "black","OrangeRed", "Khaki", "Magenta", "Olive", "Cyan", "DarkCyan", "DarkGoldenRod", "DarkGreen", "DarkKhaki", "DarkMagenta", "DarkOliveGreen", "DarkOrange", "DarkOrchid", "DarkRed", "DarkSalmon", "DarkSeaGreen", "DarkSlateBlue", "DarkSlateGray", "DarkTurquoise", "DarkViolet", "DeepPink", "DeepSkyBlue", "DodgerBlue", "FireBrick", "ForestGreen", "Gold", "GoldenRod", "GreenYellow", "HotPink", "IndianRed", "Indigo", "LawnGreen", "LightBlue", "LightCoral", "LightCyan", "LightGoldenRodYellow", "LightGreen", "LightPink", "LightSalmon", "LightSeaGreen", "LightSkyBlue", "LightSlateGray", "LightSteelBlue", "Lime", "LimeGreen", "Maroon", "MediumAquaMarine", "MediumBlue", "MediumOrchid", "MediumPurple", "MediumSeaGreen", "MediumSlateBlue", "MediumSpringGreen", "MediumTurquoise", "MediumVioletRed", "MidnightBlue", "Navy", "OliveDrab", "OrangeRed", "Orchid", "PaleGreen", "PaleTurquoise", "PaleVioletRed", "Peru", "PowderBlue", "RebeccaPurple", "RoyalBlue", "SaddleBrown", "Salmon", "SandyBrown", "SeaGreen", "Sienna", "SkyBlue", "SlateBlue", "SlateGray", "SpringGreen", "SteelBlue", "Teal", "Thistle", "Tomato", "Turquoise", "Violet", "Wheat", "YellowGreen");
   $lengthColors = array(); //this array will hold the color of each length
   //but needs to be randomized when user submits same form
   if(isset($_POST['color'])) {
