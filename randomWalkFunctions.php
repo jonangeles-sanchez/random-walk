@@ -77,10 +77,11 @@ function initializeGrid($size)
 
 /*********************************************************************************
  * Function to change the color of the walk if values are the same as previous submission
+ * Function does not work
  ********************************************************************************/
 function changeWalkColors($lengthColors){
   for($i = 0; $i < count($lengthColors); $i++){
-    $lengthColors[$i] = "red";
+    $lengthColors[$i] = "red"; //Testing color
   }
   return $lengthColors;
 }
@@ -114,47 +115,7 @@ function printGrid($size, $grid, $maxLength)
     $color = false;
   }
 
-  /*
-  echo "<table>";
-  for ($i = 0; $i < $size; $i++) {
-    echo "<tr>";
-    for ($j = 0; $j < $size; $j++) {
-      if ($grid[$i][$j] == '.') {
-        echo "<td class=\"dot\">" . $grid[$i][$j] . "</td>";
-      } else {
-        if ($color) {
-          $indexNum = substr($grid[$i][$j], 0, 1);
-          echo "<td class=<?php echo $lengthColors[$indexNum]; ?> >" . substr($grid[$i][$j], 0, -1) . "</td>";
-        } else {
-          echo "<td>" . substr($grid[$i][$j], 0, -1) . "</td>";
-        }
-      }
-    }
-    echo "</tr>";
-  }
-  */
-
-  /*
-  echo "<table";
-  for($i = 0; $i < $size; $i++){
-    echo "<tr>";
-    for($j = 0; $j < $size; $j++){
-      if($grid[$i][$j] == '.'){
-        echo "<td class=\"dot\">" . $grid[$i][$j] . "</td>";
-      } else {
-        if($color) {
-          $indexNum = substr($grid[$i][$j], 1);
-          echo "<td class=<?php echo $lengthColors[$indexNum]; ?> >" . substr($grid[$i][$j], 0, -1) . "</td>";
-        } else {
-          echo "<td>" . substr($grid[$i][$j], 0, -1) . "</td>";
-        }
-      }
-    }
-    echo "</tr>";
-  }
-  echo "</table>";
-  */
-
+  //print the grid
   echo "<table>";
   for ($i = 0; $i < $size; $i++) {
     echo "<tr>";
@@ -163,6 +124,7 @@ function printGrid($size, $grid, $maxLength)
         echo "<td class=\"dot\">" . $grid[$i][$j] . "</td>";
       } else {
         if($color){
+          //Last character is removed from the string to get the color index
           $indexNum = substr($grid[$i][$j], 1);
           echo "<td class=\"".$lengthColors[$indexNum]."\">" . substr($grid[$i][$j], 0, -1) . "</td>";
         } else {
@@ -173,7 +135,6 @@ function printGrid($size, $grid, $maxLength)
     echo "</tr>";
   }
 
-  return $lengthColors;
 }
 
 
@@ -209,12 +170,15 @@ function calculateWalk($gridSize, $walkLength)
       $taken = checkDirections($row, $col, $gridSize, $grid);
       /*if they are, print what we have and exit*/
       if (allTaken($taken)) { //spans through to next php block
-        $maxLength = $n;
+        $maxLength = $n; //MaxLength is used to count the number of succesful paths
         printGrid($gridSize, $grid, $maxLength);
         //echo "max length was " . $maxLength . "\n";
         exit(0);
       } //from previous php block
-      /*********************************************/
+      /*********************************************
+       * $n is appended at the end of the string to 
+       * keep track of their corresponding color 
+      *********************************************/
       $next = getNextDirection($taken);
       switch ($next) {
         case 0: //go north
@@ -236,7 +200,7 @@ function calculateWalk($gridSize, $walkLength)
       }
     }
   }
-  $maxLength = $n;
+  $maxLength = $n; //MaxLength is used to count the number of succesful paths
   printGrid($gridSize, $grid, $maxLength);
 }
 
