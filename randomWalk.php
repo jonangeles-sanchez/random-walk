@@ -84,10 +84,6 @@
 			echo "<option value=\"No Limit\" selected=\"selected\">No Limit</option>\n";
 		}
 
-	/*
-      if($walkLength < 1)
-        $walkLength = 1;
-	*/
       ?>
     </select>
     <input type="hidden" name="previousWalkLength" value="<?php echo $walkLength; ?>">
@@ -108,21 +104,6 @@
        //Make 25 default
       if($gridSize == 0)
         echo "<option value=\"25\" selected=\"selected\">25</option>\n";
-      
-	  /*
-      if($grid < 1){
-        $gridSize = 25;
-      } else if($grid > 25){
-        $gridSize = 25;
-      }
-	  */
-      /*
-      if($gridSize < 1)
-        $gridSize = 1;
-      else if($gridSize > 25)
-        $gridSize = 25;
-      */
-      
       
       ?>
     </select>
@@ -158,9 +139,9 @@
   /*
    * Change color of walk if values are the same as previous submission
    */
-  if($gridSize > 0){
+  if($gridSize > 0){ //ensure gridSize is valid to print grid
     if(isset($_POST['color']) && $_POST['previousGridSize'] == $gridSize && $_POST['previousWalkLength'] == $walkLength && $_POST['previousSeed'] == $seed){
-      echo "colors must change \n";//Add function to change color
+      //echo "colors must change \n";//Add function to change color
     
     }
     calculateWalk($gridSize, $walkLength);

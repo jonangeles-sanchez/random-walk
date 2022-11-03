@@ -8,7 +8,7 @@ Johnny:
 
 After Completion:
 I successfully completed the Clear and Submit button. I had a little help from
-Jonathan Sanches Angeles with javascript because he understands it more. We made a Function
+Jon with javascript because he understands it more. We made a Function
 called clearSubmitFunction() and told the button to go to the clearSubmitFunction() whenever
 the (clear and submit) button is pressed. The function clears the value, adds
 a new one, and submit the new value. I attempted to work on making the grid
@@ -17,7 +17,6 @@ got to it.
 
 
 Michael:
-- add a no limit option to the walk length drop down list and have that preselected (first bullet point on the assignment)
 
 
 Leo:
@@ -26,5 +25,9 @@ Leo:
 - Helped implement the no limit option to the walklength
 
 Jonathan:
-- "add in color" (5th bullet point)
+- "add in color randomization" (5th bullet point) - did not finish
 - "random seed text input sticky" (3rd bullet point)
+- Oversaw work contributions and verified functionality of all functions. I was able to help each contributing member with their
+contributions. I also managed the GitHub to recieve and update any changes that occured. I helped Johnny with his clear and submit button and functionality
+by helping him integrate javascript. Leo and I worked on no limit option and created functionality. I completed the stickiness of value options and did not
+finish the color randomization.
